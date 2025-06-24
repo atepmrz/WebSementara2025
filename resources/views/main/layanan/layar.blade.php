@@ -6,7 +6,7 @@
             <h1 class="display-3 text-white animated slideInRight">Layanan Antar</h1>
 
             <div class="d-lg-flex d-none w-60 wow fadeInUp">
-                <img class="img-fluid px-5" src="{{ asset('img/header/layar-header.jpg') }}" alt="header layar">
+                <img class="img-fluid px-5" style="border-radius: 50px" src="{{ asset('img/header/layar-header.jpg') }}" alt="header layar">
             </div>
         </div>
     </div>

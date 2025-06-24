@@ -8,12 +8,47 @@
                 <ol class="breadcrumb animated slideInRight mb-0">
                     <li class="breadcrumb-item"><a href="#">Home</a></li>
                     <li class="breadcrumb-item"><a href="#">Promosi</a></li>
-                    {{-- <li class="breadcrumb-item active" aria-current="page">Promo Gajian</li> --}}
                 </ol>
             </nav>
         </div>
     </div>
     <!-- Page Header End -->
+
+    <style>
+        .promo-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 400px; /* Ukuran tinggi yang lebih besar */
+        }
+        .promo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+        .promo-card img {
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 100%; /* Mengisi seluruh tinggi kartu */
+            object-fit: cover; /* Menjaga rasio aspek gambar */
+        }
+        .promo-card:hover img {
+            transform: scale(1.05);
+        }
+        .promo-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #ff5722;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 12px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+    </style>
 
     <section id="voucher" class="container-fluid">
         <div class="row p-4 g-4">
@@ -27,8 +62,7 @@
                                 </div>
                                 <div class="ms-4">
                                     <h4>PROMO GAJIAN setiap tanggal 25</h4>
-                                    <span>Nikmati PROMO GAJIAN 25/5 setiap tanggal 25 sampai dengan tanggal 5 setiap
-                                        bulannya</span>
+                                    <span>Nikmati PROMO GAJIAN 25/5 setiap tanggal 25 sampai dengan tanggal 5 setiap bulannya</span>
                                 </div>
                             </div>
                         </div>
@@ -48,9 +82,27 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md wow fadeInUp">
-                <img class="img-fluid" src="{{ asset('img/promo/promogajian.jpeg') }}" alt="Promo gajian 25/5"
-                    style="border-radius: 15px;">
+            <div class="col-md-8 wow fadeInUp">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="promo-card">
+                            <span class="promo-badge">HOT</span>
+                            <img src="{{ asset('img/promo/promogajian1.jpg') }}" alt="Promo 1">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="promo-card">
+                            <span class="promo-badge">HOT</span>
+                            <img src="{{ asset('img/promo/promogajian2.jpg') }}" alt="Promo 2">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="promo-card">
+                            <span class="promo-badge">HOT</span>
+                            <img src="{{ asset('img/promo/promogajian3.jpg') }}" alt="Promo 3">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
