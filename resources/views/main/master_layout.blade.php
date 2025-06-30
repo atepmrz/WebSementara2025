@@ -83,14 +83,19 @@
                     </div>
                 </div>
 
-                <div class="nav-item dropdown">
+               <!-- Ubah Event jadi 1 link biasa -->
+            <a href="{{ url('/event') }}" class="nav-item nav-link">Event & News</a>
+
+        {{-- Semntara untuk even di rubah dulu --}}
+                {{-- <div class="nav-item dropdown"> 
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Event</a>
                     <div class="dropdown-menu bg-light m-0">
                         <a href="{{ url('/pbb') }}" class="dropdown-item">Prama Borma Berhadiah 2025</a>
                         <a href="{{ url('/kat') }}" class="dropdown-item">Info Pemenang KAT 2024</a>
                         <a href="{{ url('/reguler') }}" class="dropdown-item">Demo Masak & Resep</a>
                     </div>
-                </div>
+                </div> --}}
+                {{--  --}}
 
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan</a>

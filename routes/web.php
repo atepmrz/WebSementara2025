@@ -6,6 +6,8 @@ use App\Http\Controllers\MpanelController;
 use App\Http\Controllers\AdminLoginController;
 use App\Http\Controllers\AdminDashboardController;
 use App\Http\Controllers\PromoController;
+use App\Http\Controllers\EventController;
+use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -65,8 +67,6 @@ Route::get('/promo-pintar', function () {
     return view('main.promosi.proPintar');
 });
 
-
-
 Route::get('/promo-selaras', function () {
     return view('main.promosi.proSelaras');
 });
@@ -91,17 +91,36 @@ Route::get('/lokasi', function () {
     return view('main.layanan.lokasi');
 });
 
-Route::get('/pbb', function () {
-    return view('main.event.pbb');
-});
+// ini route yang baru //
+Route::get('/event', [EventController::class, 'index'])->name('event.index');
 
-Route::get('/kat', function () {
-    return view('main.event.kat');
-});
+Route::get('/event/resep', [EventController::class, 'resep'])->name('event.resep');
+Route::get('/event/icecream', [EventController::class, 'icecream'])->name('event.icecream');
+Route::get('/event/mewarnai', [EventController::class, 'mewarnai'])->name('event.mewarnai');
+Route::get('/event/pbb', [EventController::class, 'pbb'])->name('event.pbb');
+Route::get('/event/sasha', [EventController::class, 'sasha'])->name('event.sasha');
+// Route::get('/event/saporo', [EventController::class, 'saporo'])->name('event.saporo');
 
-Route::get('/reguler', function () {
-    return view('main.event.reguler');
-});
+//ini route News//
+Route::get('/news/donor', [NewsController::class, 'donor'])->name('news.donor');
+
+// sementara yang sebelumnya di off //
+// Route::get('/event', function () {
+//     return view('main.event.event');
+// });
+
+// Route::get('/pbb', function () {
+//     return view('main.event.pbb');
+// });
+
+// Route::get('/kat', function () {
+//     return view('main.event.kat');
+// });
+
+// Route::get('/reguler', function () {
+//     return view('main.event.reguler');
+// });
+// //
 
 Route::get('/visimisi', function () {
     return view('main.tentang.pramaBorma');
