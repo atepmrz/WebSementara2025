@@ -61,65 +61,92 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-4 p-lg-0">
-                <a href="{{ url('/') }}" class="nav-item nav-link active">Home</a>
+                <a href="{{ url('/') }}" class="nav-item nav-link {{ Request::is('/') ? 'active' : '' }}">Home</a>
+
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Promosi</a>
+                    <a href="#"
+                        class="nav-link dropdown-toggle {{ Request::is('promo-*') || Request::is('kat-*') ? 'active' : '' }}"
+                        data-bs-toggle="dropdown">Promosi</a>
                     <div class="dropdown-menu bg-light m-0">
                         {{-- <a href="{{ url('/borongHabis') }}" class="dropdown-item">Borong Habis</a> --}}
                         {{-- <a href="{{ url('/promo-nugget') }}" class="dropdown-item">Promo Nugget Vaganza</a> --}}
-                        <a href="{{ url('/promo-jsm') }}" class="dropdown-item">Promo JSM</a>
-                        <a href="{{ url('/kat-pramafresh') }}" class="dropdown-item">Katalog Prama Fresh</a>
-                        <a href="{{ url('/kat-pramaborma') }}" class="dropdown-item">Katalog Prama Borma</a>
+                        <a href="{{ url('/promo-jsm') }}"
+                            class="dropdown-item {{ Request::is('promo-jsm') ? 'active' : '' }}">Promo JSM</a>
+                        <a href="{{ url('/kat-pramafresh') }}"
+                            class="dropdown-item {{ Request::is('kat-pramafresh') ? 'active' : '' }}">Katalog Prama
+                            Fresh</a>
+                        <a href="{{ url('/kat-pramaborma') }}"
+                            class="dropdown-item {{ Request::is('kat-pramaborma') ? 'active' : '' }}">Katalog Prama
+                            Borma</a>
                         {{-- <a href="{{ url('/promo-double') }}" class="dropdown-item">Promo Double Date</a>
                         <a href="{{ url('/kue-sirup') }}" class="dropdown-item">Promo Kue & Sirup</a>
                         <a href="{{ url('/mudik-seru') }}" class="dropdown-item">Promo Mudik Seru</a>
                         <a href="{{ url('/gebyar-lebaran') }}" class="dropdown-item">Gebyar Lebaran</a>
                         <a href="{{ url('/lns') }}" class="dropdown-item">Late Night Shopping</a> --}}
-                        <a href="{{ url('/promo-fashion') }}" class="dropdown-item">Promo Fashion</a>
-                        <a href="{{ url('/promo-gajian') }}" class="dropdown-item">Promo Gajian 25/5</a>
-                        <a href="{{ url('/promo-pintar') }}" class="dropdown-item">Promo Pinter</a>
-                        <a href="{{ url('/promo-selaras') }}" class="dropdown-item">Selaras</a>
-                        <a href="{{ url('/promo-givemefive') }}" class="dropdown-item">Give Me Five</a>
+                        <a href="{{ url('/promo-fashion') }}"
+                            class="dropdown-item {{ Request::is('promo-fashion') ? 'active' : '' }}">Promo Fashion</a>
+                        <a href="{{ url('/promo-gajian') }}"
+                            class="dropdown-item {{ Request::is('promo-gajian') ? 'active' : '' }}">Promo Gajian
+                            25/5</a>
+                        <a href="{{ url('/promo-pintar') }}"
+                            class="dropdown-item {{ Request::is('promo-pintar') ? 'active' : '' }}">Promo Pintar</a>
+                        <a href="{{ url('/promo-selaras') }}"
+                            class="dropdown-item {{ Request::is('promo-selaras') ? 'active' : '' }}">Selaras</a>
+                        <a href="{{ url('/promo-givemefive') }}"
+                            class="dropdown-item {{ Request::is('promo-givemefive') ? 'active' : '' }}">Give Me
+                            Five</a>
                     </div>
                 </div>
-
-               <!-- Ubah Event jadi 1 link biasa -->
-            <a href="{{ url('/event') }}" class="nav-item nav-link">Event & News</a>
-
-        {{-- Semntara untuk even di rubah dulu --}}
+                <!-- Ubah Event jadi 1 link biasa -->
+                <a href="{{ url('/event') }}"
+                    class="nav-item nav-link {{ Request::is('event') || Request::is('event/*') || Request::is('news/*') ? 'active' : '' }}">Event
+                    & News</a>
+                {{-- Semntara untuk even di rubah dulu --}}
                 {{-- <div class="nav-item dropdown"> 
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Event</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="{{ url('/pbb') }}" class="dropdown-item">Prama Borma Berhadiah 2025</a>
-                        <a href="{{ url('/kat') }}" class="dropdown-item">Info Pemenang KAT 2024</a>
-                        <a href="{{ url('/reguler') }}" class="dropdown-item">Demo Masak & Resep</a>
+                    <a href="{{ url('/pbb') }}" class="dropdown-item">Prama Borma Berhadiah 2025</a>
+                    <a href="{{ url('/kat') }}" class="dropdown-item">Info Pemenang KAT 2024</a>
+                    <a href="{{ url('/reguler') }}" class="dropdown-item">Demo Masak & Resep</a>
                     </div>
-                </div> --}}
-                {{--  --}}
+                    </div> --}}
+                        {{-- --}}
 
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Layanan</a>
+                    <a href="#"
+                        class="nav-link dropdown-toggle {{ Request::is('layar') || Request::is('customerCare') || Request::is('voucher') || Request::is('lokasi') ? 'active' : '' }}"
+                        data-bs-toggle="dropdown">Layanan</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="{{ url('/layar') }}" class="dropdown-item">Layanan Antar
-                            (LAYAR)</a>
+                        <a href="{{ url('/layar') }}"
+                            class="dropdown-item {{ Request::is('layar') ? 'active' : '' }}">Layanan Antar (LAYAR)</a>
                         <a href="https://toko.pramatoserba.co.id/" target="_blank" class="dropdown-item">Toko Online</a>
-                        <a href="{{ url('/customerCare') }}" class="dropdown-item">Customer Care</a>
-                        <a href="{{ url('/voucher') }}" class="dropdown-item">Voucher</a>
-                        <a href="{{ url('/lokasi') }}" class="dropdown-item">Lokasi</a>
+                        <a href="{{ url('/customerCare') }}"
+                            class="dropdown-item {{ Request::is('customerCare') ? 'active' : '' }}">Customer Care</a>
+                        <a href="{{ url('/voucher') }}"
+                            class="dropdown-item {{ Request::is('voucher') ? 'active' : '' }}">Voucher</a>
+                        <a href="{{ url('/lokasi') }}"
+                            class="dropdown-item {{ Request::is('lokasi') ? 'active' : '' }}">Lokasi</a>
                     </div>
                 </div>
 
                 <div class="nav-item dropdown">
-                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Tentang Kami</a>
+                    <a href="#"
+                        class="nav-link dropdown-toggle {{ Request::is('visimisi') || Request::is('csr') || Request::is('karir') ? 'active' : '' }}"
+                        data-bs-toggle="dropdown">Tentang Kami</a>
                     <div class="dropdown-menu bg-light m-0">
-                        <a href="{{ url('/visimisi') }}" class="dropdown-item">Prama Borma Group</a>
-                        <a href="{{ url('/csr') }}" class="dropdown-item">CSR</a>
-                        <a href="{{ url('/karir') }}" class="dropdown-item">Karir</a>
+                        <a href="{{ url('/visimisi') }}"
+                            class="dropdown-item {{ Request::is('visimisi') ? 'active' : '' }}">Prama Borma Group</a>
+                        <a href="{{ url('/csr') }}"
+                            class="dropdown-item {{ Request::is('csr') ? 'active' : '' }}">CSR</a>
+                        <a href="{{ url('/karir') }}"
+                            class="dropdown-item {{ Request::is('karir') ? 'active' : '' }}">Karir</a>
                     </div>
                 </div>
+
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfFVGEmIb-PkFgrFPI3cXr6O4Ao-_3pM-5LVYgxz2oMZbF0iw/viewform?pli=1"
                     target="_blank" class="nav-item nav-link">Kerjasama</a>
             </div>
+
             <a href="https://wa.me/6287814523770/?text=" target="_blank"
                 class="btn btn-primary px-3 d-none d-lg-block d-md-block" style="border-radius: 8px;">Daftar
                 Member</a>
@@ -147,14 +174,14 @@
                             href="https://www.facebook.com/pramafresh.id/?locale=id_ID" target="_blank"><i
                                 class="fab fa-facebook-f" title="Facebook"></i></a>
                         <a class="btn btn-square btn-primary rounded-circle me-2"
-                            href="https://www.instagram.com/pramaborma_cj/" target="_blank"><i class="fab fa-instagram"
-                                title="Prama Borma"></i></a>
+                            href="https://www.instagram.com/pramaborma_cj/" target="_blank"><i
+                                class="fab fa-instagram" title="Prama Borma"></i></a>
                         <a class="btn btn-square btn-primary rounded-circle me-2"
-                            href="https://www.instagram.com/pramafresh.id/" target="_blank"><i class="fab fa-instagram"
-                                title="Prama Fresh"></i></a>
+                            href="https://www.instagram.com/pramafresh.id/" target="_blank"><i
+                                class="fab fa-instagram" title="Prama Fresh"></i></a>
                         <a class="btn btn-square btn-primary rounded-circle me-2"
-                            href="https://www.youtube.com/@pramabormacjtv6745" target="_blank"><i class="fab fa-youtube"
-                                title="Youtube"></i></a>
+                            href="https://www.youtube.com/@pramabormacjtv6745" target="_blank"><i
+                                class="fab fa-youtube" title="Youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-6">
@@ -212,15 +239,15 @@
     <!-- Copyright End -->
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top" style="margin-bottom: 100px"><i
-            class="bi bi-arrow-up"></i></a>
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"
+        style="margin-bottom: 100px"><i class="bi bi-arrow-up"></i></a>
     <!-- Cart -->
     <a href="{{ url('/layar') }}" class="btn btn-lg btn-warning btn-lg-square rounded-circle"
         style="position: fixed; bottom:75px; right:30px"><i class="bi bi-cart4"></i></a>
     <!-- Chat WA -->
     <a href="https://wa.me/6287814523770/?text=HI saya mau pesan Minyak goreng, apakah ready?" target="_blank"
-        class="btn btn-lg btn-success btn-lg-square rounded-circle" style="position: fixed; bottom:20px; right:30px"><i
-            class="bi bi-whatsapp"></i></a>
+        class="btn btn-lg btn-success btn-lg-square rounded-circle"
+        style="position: fixed; bottom:20px; right:30px"><i class="bi bi-whatsapp"></i></a>
 
 
     {{-- <script type="text/javascript">
