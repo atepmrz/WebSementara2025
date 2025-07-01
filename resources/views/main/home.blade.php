@@ -32,7 +32,7 @@
                 <a href="{{ url('/pbb') }}"><img src="{{ asset('img/banner/banner1.jpg') }}" class="d-block w-100"
                         alt="Image Slide"></a>
             </div>
-            @for ($x = 2; $x <= 2; $x++) <div class="carousel-item">
+            @for ($x = 2; $x <= 4; $x++) <div class="carousel-item">
                 <img src="{{ asset('img/banner/banner' . $x . '.jpg') }}" class="d-block w-100" alt="Image Slide">
         </div>
         @endfor

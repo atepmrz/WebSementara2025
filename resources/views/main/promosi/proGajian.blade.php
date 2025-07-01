@@ -6,9 +6,13 @@
             <h1 class="display-3 text-white animated slideInRight">Promo Gajian 25/5</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb animated slideInRight mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Promosi</a></li>
-                </ol>
+                <li class="breadcrumb-item">
+                    <a href="{{ url('/') }}" class="text-white">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="{{ url('/promo-gajian') }}" class="text-white">Promosi</a>
+                </li>
+            </ol>
             </nav>
         </div>
     </div>
@@ -83,14 +87,15 @@
             /* bayangan halus */
             transition: all 0.3s ease;
             backdrop-filter: blur(2px);
-            /* blur background sedikit */
+            
         }
 
         .custom-nav button:hover {
             background-color: rgba(255, 87, 34, 0.7);
-            /* lebih pekat saat hover */
+            
         }
 </style>
+
     <section id="voucher" class="container-fluid">
         <div class="row p-4 g-4">
             <!-- Text Section -->
@@ -161,9 +166,9 @@
                 margin: 20,
                 nav: false,
                 dots: false,
-                autoplay: true, // Tambahkan ini supaya autoplay
-                autoplayTimeout: 3000, // Durasi tiap slide (3 detik)
-                autoplayHoverPause: true, // Pause kalau hover
+                autoplay: true, 
+                autoplayTimeout: 3000, 
+                autoplayHoverPause: true, 
                 responsive: {
                     0: {
                         items: 1

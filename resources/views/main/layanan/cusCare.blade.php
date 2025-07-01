@@ -6,10 +6,14 @@
             <h1 class="display-3 text-white animated slideInRight">Customer Care</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb animated slideInRight mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Layanan</a></li>
-                    {{-- <li class="breadcrumb-item active" aria-current="page">Customer Care</li> --}}
+                    <li class="breadcrumb-item">
+                        <a href="{{ url('/') }}" class="text-white">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ url('/customerCare') }}" class="text-white">Layanan</a>
+                    </li>
                 </ol>
+                {{-- <li class="breadcrumb-item active" aria-current="page">Customer Care</li> --}}
             </nav>
         </div>
     </div>

@@ -142,7 +142,7 @@
             @for ($i = 1; $i <= 16; $i++)
                 <div class="item p-2">
                     <img 
-                        src="{{ asset('img/event/pbb/pbb' . $i . '.jpg') }}" 
+                        src="{{ asset('img/event&news/pbb/pbb' . $i . '.jpg') }}" 
                         class="img-fluid rounded shadow" 
                         alt="PBB Gambar {{ $i }}" 
                         style="cursor: pointer;"

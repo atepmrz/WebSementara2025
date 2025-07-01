@@ -6,8 +6,12 @@
             <h1 class="display-3 text-white animated slideInRight">Visi Misi</h1>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb animated slideInRight mb-0">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a href="#">Tentang Kami</a></li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ url('/') }}" class="text-white">Home</a>
+                    </li>
+                    <li class="breadcrumb-item">
+                        <a href="{{ url('/visimisi') }}" class="text-white">Tentang Kami</a>
+                    </li>
                     <li class="breadcrumb-item active" aria-current="page">Prama Borma</li>
                 </ol>
             </nav>
