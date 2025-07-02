@@ -20,7 +20,8 @@
 
     <section id="voucher" class="container-fluid">
         <div class="row p-4 g-4">
-            <div class="col-md">
+            <!-- Keterangan -->
+            <div class="col-md-6">
                 <div class="wow fadeInUp" data-wow-delay="0.5s">
                     <div class="row gy-4">
                         <div class="col-12">
@@ -41,106 +42,92 @@
             </div>
 
             <!-- Carousel -->
-            <div class="col-md wow fadeInUp">
+            <div class="col-md-6 wow fadeInUp">
                 <style>
-                    .carousel-inner img {
-                        max-width: 300px;
-                        height: auto;
-                        margin: 0 auto;
-                        border-radius: 15px;
-                    }
-
-                    #promoCarousel {
+                    .carousel-wrapper {
                         position: relative;
                         max-width: 320px;
-                        margin: 0 auto;
+                        margin: auto;
                     }
 
-                    .btn-carousel {
+                    .carousel-inner img {
+                        border-radius: 15px;
+                        width: 100%;
+                        height: auto;
+                        object-fit: contain;
+                    }
+
+                    .custom-side-nav {
                         position: absolute;
                         top: 50%;
                         transform: translateY(-50%);
+                        z-index: 10;
+                        background-color: #ff5722; /* Warna oranye solid */
+                        border: none;
+                        color: white;
                         width: 48px;
                         height: 48px;
-                        border: 2px solid #0d6efd;
+                        font-size: 20px;
                         border-radius: 50%;
-                        background: transparent;
-                        color: #0d6efd;
                         display: flex;
-                        justify-content: center;
                         align-items: center;
-                        font-size: 22px;
-                        cursor: pointer;
-                        transition: background-color 0.3s ease, color 0.3s ease;
-                        user-select: none;
-                        z-index: 10;
+                        justify-content: center;
+                        transition: background 0.3s ease;
                     }
 
-                    .btn-carousel:hover {
-                        background-color: #0d6efd;
-                        color: white;
+                    .custom-side-nav:hover {
+                        background-color: #e64a19; /* Oranye gelap saat hover */
                     }
 
-                    .btn-carousel:focus {
-                        outline: none;
-                        box-shadow: none;
-                        transform: translateY(-50%) !important;
-                    }
-
-                    .btn-carousel.prev {
+                    .custom-prev {
                         left: -55px;
                     }
 
-                    .btn-carousel.next {
+                    .custom-next {
                         right: -55px;
                     }
 
                     @media (max-width: 768px) {
-                        .btn-carousel {
-                            width: 40px;
-                            height: 40px;
-                            font-size: 20px;
-                            border-width: 1.5px;
+                        .custom-side-nav {
+                            width: 42px;
+                            height: 42px;
+                            font-size: 18px;
                         }
 
-                        .btn-carousel.prev {
+                        .custom-prev {
                             left: -45px;
                         }
 
-                        .btn-carousel.next {
+                        .custom-next {
                             right: -45px;
                         }
                     }
                 </style>
 
-                <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
-                    <div class="carousel-inner text-center">
-                        @for ($i = 1; $i <= 4; $i++)
-                            <div class="carousel-item {{ $i === 1 ? 'active' : '' }}">
-                                <img src="{{ asset('img/promo/selaras/' . $i . '.jpg') }}"
-                                    alt="Promo Selaras {{ $i }}">
-                            </div>
-                        @endfor
+                <div class="carousel-wrapper">
+                    <div id="promoCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner text-center">
+                            @for ($i = 1; $i <= 4; $i++)
+                                <div class="carousel-item {{ $i === 1 ? 'active' : '' }}">
+                                    <img src="{{ asset('img/promo/selaras/' . $i . '.jpg') }}" alt="Promo Selaras {{ $i }}">
+                                </div>
+                            @endfor
+                        </div>
+
+                        <!-- Tombol Prev -->
+                        <button class="custom-side-nav custom-prev" type="button" data-bs-target="#promoCarousel"
+                            data-bs-slide="prev" aria-label="Previous">
+                            <i class="fa fa-chevron-left"></i>
+                        </button>
+
+                        <!-- Tombol Next -->
+                        <button class="custom-side-nav custom-next" type="button" data-bs-target="#promoCarousel"
+                            data-bs-slide="next" aria-label="Next">
+                            <i class="fa fa-chevron-right"></i>
+                        </button>
                     </div>
-
-                    <button class="btn-carousel prev" type="button" data-bs-target="#promoCarousel" data-bs-slide="prev"
-                        aria-label="Previous">
-                        <i class="fa fa-chevron-left"></i>
-                    </button>
-
-                    <button class="btn-carousel next" type="button" data-bs-target="#promoCarousel" data-bs-slide="next"
-                        aria-label="Next">
-                        <i class="fa fa-chevron-right"></i>
-                    </button>
                 </div>
             </div>
         </div>
     </section>
 @endsection
-
-
-
-
-
-
-{{-- <li class="breadcrumb-item active" aria-current="page">Selaras</li> --}}

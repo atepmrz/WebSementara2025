@@ -37,29 +37,47 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 10;
-            background-color: rgba(0, 123, 255, 0.3);
+            background-color: #ff5722;
+            /* Warna oranye solid */
             border: none;
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 48px;
+            height: 48px;
+            font-size: 20px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             transition: background 0.3s ease;
-            backdrop-filter: blur(2px);
         }
 
         .custom-side-nav:hover {
-            background-color: rgba(0, 123, 255, 0.6);
+            background-color: #e64a19;
+            /* Oranye gelap saat hover */
         }
 
         .custom-prev {
-            left: -50px;
+            left: -55px;
         }
 
         .custom-next {
-            right: -50px;
+            right: -55px;
+        }
+
+        @media (max-width: 768px) {
+            .custom-side-nav {
+                width: 42px;
+                height: 42px;
+                font-size: 18px;
+            }
+
+            .custom-prev {
+                left: -45px;
+            }
+
+            .custom-next {
+                right: -45px;
+            }
         }
     </style>
 
