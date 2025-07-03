@@ -23,12 +23,7 @@
     <div class="container-xxl py-3">
         <div class="container text-center" style="max-width: 600px;">
             <h2 class="display-6 mb-4">Pilih Lokasi Prama Borma Group</h2>
-
-            {{-- @if ($produk)
-                <p class="lead">Produk yang Anda pilih: <strong>{{ $produk }}</strong></p>
-            @endif --}}
         </div>
-
         <div class="row g-4">
             @foreach ($cabang as $c)
                 <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
@@ -57,9 +52,9 @@
                                     <div class="text-dark">
                                         <h5>{{ $c['nama'] }}</h5>
                                         <span class="text-primary"></span>
-                                    <div class="team-social">
-                                        <h4 class="text-white mb-0">New Store 🛒 </h4>
-                                    </div>
+                                        <div class="team-social">
+                                            <h4 class="text-white mb-0">New Store 🛒 </h4>
+                                        </div>
                                     </div>
                                 @endif
                             </div>
